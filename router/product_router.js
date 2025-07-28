@@ -1,4 +1,4 @@
-const { Router } = require("express");
+const { Router } = require('express');
 const {
   createProduct,
   getAllProducts,
@@ -10,8 +10,8 @@ const {
   getPizzaProducts,
   updatePizzaProduct,
   deletePizzaProduct,
-} = require("../controller/product_ctr");
-const requireAdmin = require("../middleware/tokenChecker");
+} = require('../controller/product_ctr');
+const requireAdmin = require('../middleware/tokenChecker');
 
 const productRouter = Router();
 
@@ -27,7 +27,7 @@ const productRouter = Router();
  *       200:
  *         description: Product added
  */
-productRouter.post("/add_product", requireAdmin, createProduct);
+productRouter.post('/add_product', requireAdmin, createProduct);
 /**
  * @swagger
  * /get_all_products:
@@ -38,7 +38,7 @@ productRouter.post("/add_product", requireAdmin, createProduct);
  *       200:
  *         description: List of products
  */
-productRouter.get("/get_all_products", getAllProducts);
+productRouter.get('/get_all_products', getAllProducts);
 /**
  * @swagger
  * /get_one_product/{id}:
@@ -55,7 +55,7 @@ productRouter.get("/get_all_products", getAllProducts);
  *       200:
  *         description: Product details
  */
-productRouter.get("/get_one_product/:id", getOneProduct);
+productRouter.get('/get_one_product/:id', getOneProduct);
 /**
  * @swagger
  * /update_product/{id}:
@@ -74,7 +74,7 @@ productRouter.get("/get_one_product/:id", getOneProduct);
  *       200:
  *         description: Product updated
  */
-productRouter.put("/update_product/:id", requireAdmin, updateProduct);
+productRouter.put('/update_product/:id', requireAdmin, updateProduct);
 /**
  * @swagger
  * /delete_product/{id}:
@@ -93,7 +93,7 @@ productRouter.put("/update_product/:id", requireAdmin, updateProduct);
  *       200:
  *         description: Product deleted
  */
-productRouter.delete("/delete_product/:id", requireAdmin, deleteProduct);
+productRouter.delete('/delete_product/:id', requireAdmin, deleteProduct);
 ///////////////// pizzaProduct
 /**
  * @swagger
@@ -107,7 +107,7 @@ productRouter.delete("/delete_product/:id", requireAdmin, deleteProduct);
  *       200:
  *         description: Pizza product added
  */
-productRouter.post("/add_pizza_product", requireAdmin, createPizzaProduct);
+productRouter.post('/add_pizza_product', requireAdmin, createPizzaProduct);
 /**
  * @swagger
  * /get_pizza_products/{id}:
@@ -124,7 +124,7 @@ productRouter.post("/add_pizza_product", requireAdmin, createPizzaProduct);
  *       200:
  *         description: List of pizza products
  */
-productRouter.get("/get_pizza_products/:id", getPizzaProducts)
+productRouter.get('/get_pizza_products/:id', getPizzaProducts);
 /**
  * @swagger
  * /update_pizza_product:
@@ -137,7 +137,7 @@ productRouter.get("/get_pizza_products/:id", getPizzaProducts)
  *       200:
  *         description: Pizza product updated
  */
-productRouter.put("/update_pizza_product", requireAdmin, updatePizzaProduct)
+productRouter.put('/update_pizza_product', requireAdmin, updatePizzaProduct);
 /**
  * @swagger
  * /delete_pizza_product:
@@ -150,6 +150,6 @@ productRouter.put("/update_pizza_product", requireAdmin, updatePizzaProduct)
  *       200:
  *         description: Pizza product deleted
  */
-productRouter.delete("/delete_pizza_product", requireAdmin, deletePizzaProduct)
+productRouter.delete('/delete_pizza_product', requireAdmin, deletePizzaProduct);
 
 module.exports = productRouter;

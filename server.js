@@ -118,7 +118,11 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'http://localhost:' + PORT,
+        url:
+          // process.env.NODE_ENV === 'production'
+          'production'
+            ? 'https://belissimo-backend.onrender.com'
+            : 'http://localhost:' + PORT,
       },
     ],
     components: {
